@@ -1,0 +1,10 @@
+-
+  name: play1
+  hosts: all
+  tasks:
+    - name: replace word "hello world" in /opt/india/russia.txt with "india is great"
+      lineinfile:
+        path: /opt/india/russia.txt
+        regex: "hello world"
+        line: "india is great"
+        state: present

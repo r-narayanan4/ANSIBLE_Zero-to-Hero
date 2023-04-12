@@ -1,2 +1,2 @@
-# ANSIBLE
-REPO for Learning ANSIBLE
+# Ansible-demo
+practising ansible playbook

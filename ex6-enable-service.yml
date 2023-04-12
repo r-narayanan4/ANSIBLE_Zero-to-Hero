@@ -1,0 +1,9 @@
+-
+  name: Enable service at boot time
+  hosts: client1
+  tasks:
+    - name: enable service
+      service:
+        name: httpd
+        enabled: yes
+        

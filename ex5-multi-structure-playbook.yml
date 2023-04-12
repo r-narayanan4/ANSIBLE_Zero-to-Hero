@@ -1,0 +1,17 @@
+-
+  name: play1
+  hosts: all
+  tasks:
+    - name:
+      yum:
+        name: httpd
+        state: present
+
+-
+  name: play2
+  hosts: all
+  tasks:
+    - name:
+      service:
+        name: httpd
+        state: started

@@ -1,0 +1,8 @@
+-
+  name: examples of loops in future (2.11)
+  hosts: client1
+  tasks:
+    - name: ansible loop in future(2.11)
+      yum:
+        name: ['git', 'finger', 'docker', 'httpd', 'net-tools']
+        state: present

@@ -1,0 +1,8 @@
+-
+  name: playbook on use case of execution
+  hosts: all
+  tasks:
+    - name: git_installation_code
+      yum:
+        name: git
+        state: absent

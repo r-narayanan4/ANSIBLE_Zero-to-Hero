@@ -1,0 +1,19 @@
+-
+  name: play1
+  hosts: client
+  vars:
+    a: 12
+    b: 30.4
+    c: "asl324"
+    d: "iam rl"
+  tasks:
+      - name: pb to create a file
+        file:
+          path: /opt/variables.txt
+          state: touch
+
+      - name: pb to call variable in that file
+        lineinfile:
+          path: /opt/variables.txt
+          line: "The value of A is {{a}} and B is {{b}} and C is {{c}} and D is {{d}}"
+          state: present

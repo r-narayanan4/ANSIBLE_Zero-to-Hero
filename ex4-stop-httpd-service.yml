@@ -1,0 +1,8 @@
+-
+  name: play1
+  hosts: client1
+  tasks:
+    - name: to stop httpd service
+      service:
+        name: httpd
+        state: stopped

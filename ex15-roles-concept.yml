@@ -1,0 +1,5 @@
+---
+  - import_playbook: /root/ansible-demo/ex-12-loops-past.yml
+
+  - import_playbook: /root/ansible-demo/loops-future.yml
+  

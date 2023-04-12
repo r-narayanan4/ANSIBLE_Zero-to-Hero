@@ -1,0 +1,20 @@
+-
+  name: play1
+  hosts: client1
+  tasks:
+    - name: to create a folder name ravi
+      command:
+        cmd: mkdir /opt/ravi
+
+    - name: to create file under folder
+      command:
+        cmd: touch /opt/ravi/sample1.txt
+
+    - name: to write content in file
+      command:
+        cmd: echo "hi ravi" >> /opt/ravi/sample1.txt
+
+
+#- name : to create a folder
+#  cmd: mkdir/opt/ravi
+# here command module for write a conntent will not work it will work file module and copy module.

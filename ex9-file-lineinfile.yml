@@ -1,0 +1,25 @@
+-
+  name: play1
+  hosts: all
+  tasks:
+    - name: Crete india dir in /opt
+      file:
+        path: /opt/india
+        state: directory
+        mode: '0755'
+
+    - name: crete russia.txt in /opt/india
+      file:
+        path: /opt/india/russia.txt
+        state: touch
+
+    - name: crete hello world in russia.txt
+      lineinfile:
+        path: /opt/india/russia.txt
+        line: "hello world"
+        state: present
+
+    - name: permission of the file should be execute
+      file:
+       path: /opt/india/russia.txt
+       mode: '0744'

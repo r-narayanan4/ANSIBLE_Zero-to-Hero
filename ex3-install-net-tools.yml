@@ -1,0 +1,8 @@
+-
+  name: play1
+  hosts: client1
+  tasks:
+    - name: install net-tools
+      yum:
+        name: net-tools
+        state: present

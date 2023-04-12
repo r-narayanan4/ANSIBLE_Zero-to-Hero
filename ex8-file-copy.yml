@@ -1,0 +1,14 @@
+-
+  name: play1
+  hosts: client1
+  tasks:
+    - name: crete a file "notes.txt" under /opt using file module
+      file:
+        path: /opt/notes.txt
+        state: touch
+
+    - name: write "hello world" in /opt/notes.txt using copy module
+      copy:
+        content: "hello world"
+        dest: /opt/notes.txt
+        

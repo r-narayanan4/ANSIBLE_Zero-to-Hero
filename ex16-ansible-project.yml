@@ -1,0 +1,41 @@
+-
+  name: Playbook to change dynamic ip to static ip
+  hosts: project
+  vars:
+    ip: 192.168.29.16
+    gw: 192.158.29.1
+
+
+  tasks:
+    - name: code to change the hostname
+      command: hostnamectl set-hostname ansible-project
+
+    - name: code to edit the hostname in /etc/hosts
+      lineinfile:
+        path: /etc/hosts
+        line: "192.168.29.16 ansible-project"
+        state: present
+
+    - name: code to edit n/w adapter
+      lineinfile:
+        path: /etc/sysconfig/network-scripts/ifcfg-enp0s3
+        regex: "BOOTPROTO=dhcp"
+        line: "BOOTPROTO=static"
+        state: present
+
+    - name: code to edit the n/w adapter file
+      lineinfile:
+        path: /etc/sysconfig/network-scripts/ifcfg-enp0s3
+        regex: "ONBOOT=no"
+        line: "ONBOOT=yes"
+        state: present
+
+    - name: code to edit the n/w adapter file
+      lineinfile:
+        path: /etc/sysconfig/network-scripts/ifcfg-enp0s3
+        line: "IPADDR={{ip}} \nDNS1={{gw}} \nDNS2=8.8.8.8 \nGATEWAY={{gw}}"
+        state: present
+
+
+    - name: code to restart the network
+      reboot:
