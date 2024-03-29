@@ -1,0 +1,10 @@
+# Example demonstrating YAML Syntax
+
+# YAML uses indentation to represent data hierarchy and structure.
+# Each level of indentation is represented by spaces.
+
+# In Ansible, indentation is crucial for defining plays, tasks, and other elements correctly.
+# Incorrect indentation can lead to syntax errors.
+name: John Doe
+age: 30
+employed: true

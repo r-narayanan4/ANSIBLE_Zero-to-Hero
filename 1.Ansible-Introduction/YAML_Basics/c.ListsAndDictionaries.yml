@@ -1,0 +1,13 @@
+# Example demonstrating Lists and Dictionaries in YAML
+
+# Lists: Represented by hyphens (-) followed by space. Used for defining multiple items under a single key.
+fruits:
+  - Apple
+  - Banana
+  - Orange
+
+# Dictionaries: Represented by key-value pairs. Used for defining attributes or parameters with corresponding values.
+person:
+  name: John Doe
+  age: 30
+  profession: Developer

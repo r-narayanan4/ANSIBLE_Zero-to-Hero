@@ -1,0 +1,29 @@
+# Example demonstrating YAML Anchors and Aliases
+
+# Anchors (&) mark key-value pairs with a unique name.
+# Aliases (*) reference that same value elsewhere in the document.
+
+# This demonstrates the use of YAML anchors and aliases for reusing data.
+person_defaults: &person_defaults
+  name: Default Name
+  age: 25
+
+person1:
+  <<: *person_defaults
+  name: Alice
+  employed: true
+
+person2:
+  <<: *person_defaults
+  name: Bob
+  employed: false
+
+# Example demonstrating Multi-line Strings in YAML
+
+# Multi-line strings are represented using the '|' symbol, which preserves newlines.
+
+# This is a multi-line string example:
+description: |
+  This is a long description
+  that spans multiple lines.
+  It will be preserved as-is.

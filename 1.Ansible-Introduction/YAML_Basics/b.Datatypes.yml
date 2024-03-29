@@ -1,0 +1,18 @@
+# Example demonstrating YAML Data Types
+
+# Scalars: Single values like strings, numbers, or boolean values.
+name: John Doe
+age: 30
+employed: true
+
+# Mappings: Key-value pairs where each key is followed by a colon and a space, and the corresponding value.
+address:
+  city: New York
+  street: 123 Main St
+  zip_code: 10001
+
+# Sequences: Ordered lists of scalars or other data structures.
+hobbies:
+  - Reading
+  - Hiking
+  - Cooking
