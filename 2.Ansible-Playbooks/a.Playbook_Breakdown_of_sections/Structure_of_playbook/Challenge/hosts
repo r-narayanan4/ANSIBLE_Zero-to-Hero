@@ -1,0 +1,36 @@
+[control]
+; This group contains a single host named 'ubuntu-c' that will be accessed locally.
+ubuntu-c ansible_connection=local
+
+[centos]
+; This group contains CentOS hosts.
+
+; This host is named 'centos1' and uses port 2222 for SSH.
+centos1 ansible_port=2222
+
+; This is a range pattern, including hosts named 'centos2' and 'centos3'.
+centos[2:3]
+
+[centos:vars]
+; These variables apply to all hosts in the 'centos' group.
+ansible_user=root
+
+[ubuntu]
+; This group contains Ubuntu hosts.
+
+; This is a range pattern, including hosts named 'ubuntu1', 'ubuntu2', and 'ubuntu3'.
+ubuntu[1:3]
+
+[ubuntu:vars]
+; These variables apply to all hosts in the 'ubuntu' group.
+
+; Enable privilege escalation (sudo) on Ubuntu hosts.
+ansible_become=true
+
+; Set the password for privilege escalation.
+ansible_become_pass=password
+
+[linux:children]
+; This special group dynamically includes all hosts from its child groups ('centos' and 'ubuntu').
+centos
+ubuntu
